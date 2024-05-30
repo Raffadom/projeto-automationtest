@@ -92,7 +92,7 @@ describe('Login', () => {
         .should('be.visible')
         .click()
       cy.step('verifica que a mensagem de erro está correta e visível')
-      cy.contains('Error: the password you entered for the username Raffa@san.com is incorrect. Lost your password?')
+      cy.contains('Error: The password you entered for the username Raffa@san.com is incorrect. Lost your password?')
         .should('be.visible')
     })
     it('realiza login e logout com sucesso e verifica que ao clicar em "voltar" no navegador, não deve estar logado', () => {

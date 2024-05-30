@@ -1,6 +1,7 @@
 const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
+  projectId: 'us5c1r',
   e2e: {
     baseUrl: 'https://practice.automationtesting.in/',
     env: {
@@ -10,5 +11,5 @@ module.exports = defineConfig({
     experimentalRunAllSpecs: true
   },
   fixturesFolder: false,
-  video: true
+  video: false
 })

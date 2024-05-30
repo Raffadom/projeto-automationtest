@@ -143,7 +143,7 @@ describe('My Account', () => {
     cy.contains('a', 'Logout')
       .should('be.visible')
       .click()
-    cy.step('verifica que o usuário foi redireciconado para página de login')
+    cy.step('verifica que o usuário foi redirecionado para página de login')
     cy.url()
       .should('be.equal', `${Cypress.config('baseUrl')}my-account/`)
   })
