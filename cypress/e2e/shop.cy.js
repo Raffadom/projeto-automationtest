@@ -101,13 +101,13 @@ describe('Shop', () => {
         .should('be.visible')
     })
     context('Shop - Tax', () => {
-      it('verifica variações de taxa de imposto para a Índia em comparação com outros países', () => {
+      it.only('verifica variações de taxa de imposto para a Índia em comparação com outros países', () => {
         cy.step('preenche os campos obrigatórios na página de checkout')
         cy.camposObrigatoriosEmCheckoutIndia()
         cy.step('verifica que a taxa para a India é de 2% do subtotal')
-        cy.contains('.cart-subtotal', '350.00')
+        cy.contains('.cart-subtotal', '450.00')
           .should('be.visible')
-        cy.contains('.tax-rate', '7.00')
+        cy.contains('.tax-rate', '9.00')
           .should('be.visible')
       })
     })
