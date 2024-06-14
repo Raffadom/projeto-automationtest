@@ -5,8 +5,8 @@ Cypress.Commands.add('gui_login', (
 ) => {
   cy.visit('/my-account/')
 
-  cy.get('#username').type(user, { log: false })
-  cy.get('#password').type(password, { log: false })
+  cy.get('#username').type(user, { log: false } )
+  cy.get('#password').type(password, { log: false } )
   cy.get('input[value="Login"]').click()
   cy.contains('p', 'raffa')
     .should('be.visible')
