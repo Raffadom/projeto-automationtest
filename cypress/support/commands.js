@@ -26,7 +26,7 @@ Cypress.Commands.add('fillMandatoryFieldsAndRegister', function (fieldsVals = {}
 
   cy.get('#reg_email').type(raffa.name)
   cy.get('#reg_password').type(password, { log: false })
-  cy.wait(5000)
+  //cy.wait(5000)
 
   cy.get('input[value="Register"]').click({ force: true })
 })
