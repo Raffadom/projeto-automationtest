@@ -11,7 +11,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
-          command: npm run test:homePage.cy.js
+          command: npm run test:homePage
   cypress-run-2:
     runs-on: ubuntu-20.04
     steps:
@@ -22,7 +22,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
-          command: npm run test:login.cy.js
+          command: npm run test:login
   cypress-run-3:
     runs-on: ubuntu-20.04
     steps:
@@ -33,7 +33,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
-          command: npm run test:myaccount.cy.js
+          command: npm run test:myaccount
   cypress-run-4:
     runs-on: ubuntu-20.04
     steps:
@@ -44,7 +44,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
-          command: npm run test:register.cy.js
+          command: npm run test:register
   cypress-run-5:
     runs-on: ubuntu-20.04
     steps:
@@ -55,4 +55,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
-          command: npm run test:shop.cy.js
+          command: npm run test:shop
