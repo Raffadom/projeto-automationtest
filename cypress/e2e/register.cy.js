@@ -42,13 +42,13 @@ describe('Register a User', () => {
       cy.contains('Error: Please provide a valid email address.')
         .should('be.visible')
     })
-    it('registra com o campo "Password" vazio', () => {
+    it.only('registra com o campo "Password" vazio', () => {
       cy.step('preenche o campo "Email address" com e-mail válido e deixa o campo "Password" vazio')
       cy.get('#reg_email').type(user, { log: false })
       cy.step('aguarda por 5 segundos')
       cy.wait(5000)
       cy.step('clica no botão "Register"')
-      cy.get('input[value="Register"]').click({ force: true })
+      cy.get('input[name="register"]').click({ force: true })
       cy.step('verifica que a mensagem de erro esta correta e visível')
       cy.contains('Error: An account is already registered with your email address. Please login.')
         .should('be.visible')
