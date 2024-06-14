@@ -1,4 +1,6 @@
 describe('Home Page', () => {
+  const icon_menu = '#menu-icon'
+  const menu_cart = '.wpmenucart-contents'
   beforeEach(() => {
     cy.section('Pré-condições dos testes')
     cy.step('visita a aplicação em teste')
@@ -42,16 +44,17 @@ describe('Home Page', () => {
         .should('be.visible')
     })
     it('home page - verifica que o item possui um comentário', () => {
+      const reviews = '.reviews_tab'
       cy.step('clica na imagem para ser redirecionado à página onde o usuário pode adicionar o item à cesta')
       cy.contains('a', 'Selenium Ruby')
         .should('be.visible')
         .click()
       cy.step('marca a guia "Reviews" do livro')
-      cy.get('.reviews_tab')
+      cy.get(reviews)
         .should('be.visible')
         .click()
       cy.step('verifica que deve haver um comentario sobre o livro em que o usuário clicou')
-      cy.get('.reviews_tab')
+      cy.get(reviews)
         .should('contain', 'Reviews (0)')
       })
       context('Add to basket cases', () => {
@@ -69,10 +72,10 @@ describe('Home Page', () => {
         })
         it('home page - o item no menu contém o preço', () => {
           cy.step('o usuario pode visualizar o item no menu, com o preço')
-          cy.get('#menu-icon')
+          cy.get(icon_menu)
             .should('be.visible')
             .click()
-          cy.get('.wpmenucart-contents')
+          cy.get(menu_cart)
             .should('be.visible')
             .and('contain', '₹350.00')
         })
@@ -90,11 +93,11 @@ describe('Home Page', () => {
         })
         it('home page - clica em item no menu e verifica que foi redirecionado para a pagina de checkout ', () => {
           cy.step('clica no menu')
-          cy.get('#menu-icon')
+          cy.get(icon_menu)
             .should('be.visible')
             .click()
           cy.step('clica no menu item para ser redirecionado para a pagina de checkout')
-          cy.get('.wpmenucart-contents')
+          cy.get(menu_cart)
             .should('be.visible')
             .click()
           cy.step('verifica que foi redirecionado para a página de checkout')
@@ -104,11 +107,11 @@ describe('Home Page', () => {
         context('Cupon Cases', () => {
           beforeEach(() => {
             cy.step('clica no menu')
-            cy.get('#menu-icon')
+            cy.get(icon_menu)
               .should('be.visible')
               .click()
             cy.step('clica no menu item para ser redirecionado para a pagina de checkout')
-            cy.get('.wpmenucart-contents')
+            cy.get(menu_cart)
               .should('be.visible')
               .click()
             cy.step('verifica que foi redirecionado para a página de checkout')

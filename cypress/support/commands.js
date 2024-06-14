@@ -5,8 +5,8 @@ Cypress.Commands.add('gui_login', (
 ) => {
   cy.visit('/my-account/')
 
-  cy.get('#username').type(user, { log: false } )
-  cy.get('#password').type(password, { log: false } )
+  cy.get('#username').type(user)
+  cy.get('#password').type(password)
   cy.get('input[value="Login"]').click()
   cy.contains('p', 'raffa')
     .should('be.visible')
@@ -20,15 +20,17 @@ Cypress.Commands.add('fillMandatoryFieldsAndRegister', function (fieldsVals = {}
   const {
     password = Cypress.env('user_password')
   } = fieldsVals
+
+  const register_button = '.woocomerce-FormRow .woocommerce-Button'
   cy.visit('/')
   cy.get('#menu-icon').click()
   cy.contains('My Account').click()
 
   cy.get('#reg_email').type(raffa.name)
-  cy.get('#reg_password').type(password, { log: false })
+  cy.get('#reg_password').type(password)
   //cy.wait(5000)
 
-  cy.get('input[value="Register"]').click({ force: true })
+  cy.get(register_button).click()
 })
 
 Cypress.Commands.add('camposObrigatoriosEmCheckout', function (fieldsValsCheckout = {}) {
