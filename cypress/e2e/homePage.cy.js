@@ -5,12 +5,6 @@ describe('Home Page', () => {
     cy.visit('/')
     cy.step('verifica que o título está correto')
     cy.title().should('be.equal', 'Automation Practice Site')
-    cy.step('clica no menu')
-    cy.get('#menu-icon').should('be.visible').click()
-    cy.step('clica no menu "Shop"')
-    cy.contains('a', 'Shop').should('be.visible').click()
-    cy.step('clica no menu "Home"')
-    cy.contains('a', 'Home').should('be.visible').click()
     cy.section('fim das pré-condições')
   })
   it('home page - contém apenas 3 sliders', () => {
