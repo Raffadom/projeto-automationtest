@@ -8,11 +8,11 @@
     "lint:fix": "npx standard --fix",
     "test": "cypress run",
     "cy:open": "cypress open",
-    "test:homePage.cy.js": "cypress run --spec 'cypress/e2e/homePage.cy.js'",
-    "test:login.cy.js": "cypress run --spec 'cypress/e2e/login.cy.js'",
-    "test:myaccount.cy.js": "cypress run --spec 'cypress/e2e/myaccount.cy.js'",
-    "test:register.cy.js": "cypress run --spec 'cypress/e2e/register.cy.js'",
-    "test:shop.cy.js": "cypress run --spec 'cypress/e2e/shop.cy.js'"
+    "test:homePage": "cypress run --spec 'cypress/e2e/homePage.cy.js'",
+    "test:login": "cypress run --spec 'cypress/e2e/login.cy.js'",
+    "test:myaccount": "cypress run --spec 'cypress/e2e/myaccount.cy.js'",
+    "test:register": "cypress run --spec 'cypress/e2e/register.cy.js'",
+    "test:shop": "cypress run --spec 'cypress/e2e/shop.cy.js'"
   },
   "keywords": [],
   "author": "",
