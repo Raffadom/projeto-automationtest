@@ -24,8 +24,8 @@ jobs:
         with: 
           command: npm run test:login
         env:   
-          CYPRESS_user_name: ${{ Cypress.env('user_name') }}
-          CYPRESS_user_password: ${{ Cypress.env('user_password') }}
+          CYPRESS_user_name: ${{ secrets.CYPRESS_user_name }}
+          CYPRESS_user_password: ${{ secrets.CYPRESS_user_password }}
   cypress-run-3:
     runs-on: ubuntu-20.04
     steps:
