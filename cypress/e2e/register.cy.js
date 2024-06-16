@@ -1,6 +1,7 @@
 describe('Register a User', () => {
   const reg_email = '#reg_email'
   const reg_password = '#reg_password'
+  const register_button = 'input[value="Register"]'
   it('registra uma nova conta com sucesso', () => {
     cy.step('preenche os campos obrigatórios de registro e submete')
     cy.fillMandatoryFieldsAndRegister()
@@ -11,7 +12,7 @@ describe('Register a User', () => {
     const user = Cypress.env('user_name')
     const password = Cypress.env('user_password')
     const existing_email = Cypress.env('user_email_existing')
-    const register_button = 'input[value="Register"]'
+    
 
     beforeEach(() => {
       cy.section('Pré-condições dos testes')
