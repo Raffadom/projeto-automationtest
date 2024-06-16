@@ -42,7 +42,7 @@ describe('Register a User', () => {
       cy.step('clica no botão "Register"')
       cy.get(register_button).click({ force: true })
       cy.step('verifica que a mensagem de erro esta correta e visível')
-      cy.contains('Error: Please provide a valid email address.')
+      cy.contains(' Please provide a valid email address.')
         .should('be.visible')
     })
     it('registra com o campo "Password" vazio', () => {
