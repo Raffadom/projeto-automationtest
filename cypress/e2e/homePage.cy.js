@@ -1,6 +1,11 @@
 describe('Home Page', () => {
   const icon_menu = '#menu-icon'
   const menu_cart = '.wpmenucart-contents'
+  const input_number = 'input[type="number"]'
+  const coupon_code = '#coupon_code'
+  const coupon_apply = 'input[value="Apply Coupon"]'
+  const message_com = '.woocommerce-message'
+  
   beforeEach(() => {
     cy.section('Pré-condições dos testes')
     cy.step('visita a aplicação em teste')
@@ -81,7 +86,7 @@ describe('Home Page', () => {
         })
         it('home page - adiciona mais livros do que existe em estoque', () => {
           cy.step('clica no campo de quantidade de itens e adiciona mais itens do que tem no estoque')
-          cy.get('input[type="number"]')
+          cy.get(input_number)
             .should('be.visible')
             .click()
             .clear()
@@ -120,14 +125,14 @@ describe('Home Page', () => {
           })
           it('home page - adiciona um cupom de desconto e verifica que não é aplicavel pois o valor minimo é 450rps', () => {
             cy.step('clica no campo "APPLY COUPON')
-            cy.get('#coupon_code')
+            cy.get(coupon_code)
               .should('be.visible')
               .click()
             cy.step('entra com o cupom de desconto para obter 50rps off')
-            cy.get('#coupon_code')
+            cy.get(coupon_code)
               .type('krishnasakinala')
             cy.step('clica no botão "APPLY COUPON')
-            cy.get('input[value="Apply Coupon"]')
+            cy.get(coupon_apply)
               .should('be.visible')
               .click()
             cy.step('verifica que a mensagem de erro "The minimum spend for this coupon is ₹450.00." está visivel')
@@ -137,7 +142,7 @@ describe('Home Page', () => {
           })
           it('home page - aumenta a quantidade de livros para 2 e adiciona o cupom', () => {
             cy.step('clica no seletor que aumenta para 2 a quantidade de livros')
-            cy.get('input[type="number"]')
+            cy.get(input_number)
               .clear()
               .type(2)
             cy.step('clica em "UPDATE BASKET" para atualizar a quantidade')
@@ -145,14 +150,14 @@ describe('Home Page', () => {
               .should('be.visible')
               .click()            
             cy.step('entra com o cupom de desconto para obter 50rps off')
-            cy.get('#coupon_code')
+            cy.get(coupon_code)
               .type('krishnasakinala', { timeout: 10000 })
             cy.step('clica no botão "APPLY COUPON')
-            cy.get('input[value="Apply Coupon"]')
+            cy.get(coupon_apply)
               .should('be.visible')
               .click()
             cy.step('verifica que a mensagem "Coupon code applied successfully." está visivel')
-            cy.get('.woocommerce-message')
+            cy.get(message_com)
               .should('be.visible')
               .and('contain', 'Coupon code applied successfully.')
           })
@@ -163,7 +168,7 @@ describe('Home Page', () => {
                 .should('be.visible')
                 .click()
               cy.step('verifica que a mensagem "Mastering JavaScript removed." está visivel')
-              cy.get('.woocommerce-message')
+              cy.get(message_com)
                 .should('be.visible')
                 .and('contain', 'Mastering JavaScript removed.')
               cy.step('verifica que a mensagem de cesta vazia está visivel')
