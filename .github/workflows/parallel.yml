@@ -10,6 +10,8 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v4
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json  
         with: 
           command: npm run test:homePage
   cypress-run-2:
@@ -21,6 +23,8 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v4
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json   
         with: 
           command: npm run test:login
   cypress-run-3:
@@ -32,6 +36,8 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v4
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json   
         with: 
           command: npm run test:myaccount
   cypress-run-4:
@@ -43,6 +49,8 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v4
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json   
         with: 
           command: npm run test:register
   cypress-run-5:
@@ -54,5 +62,7 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v4
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json   
         with: 
           command: npm run test:shop
