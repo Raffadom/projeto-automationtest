@@ -31,7 +31,7 @@ describe('Register a User', () => {
       cy.step('clica no botão "Register"')
       cy.get(register_button).click({ force: true })
       cy.step('verifica que a mensagem de erro esta correta e visível')
-      cy.contains('Error: An account is already registered with your email address. Please login.')
+      cy.contains(' An account is already registered with your email address. Please login.')
         .should('be.visible')
     })
     it('registra com o campo "Email-id" vazio', () => {
