@@ -31,7 +31,7 @@ Cypress.Commands.add('fillMandatoryFieldsAndRegister', function (fieldsVals = {}
   cy.get('#reg_password').type(password)
   //cy.wait(5000)
 
-  cy.get(register_button).click()
+  cy.get(register_button).click( { force: true } )
 })
 
 Cypress.Commands.add('camposObrigatoriosEmCheckout', function (fieldsValsCheckout = {}) {
