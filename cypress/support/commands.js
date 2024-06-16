@@ -21,7 +21,8 @@ Cypress.Commands.add('fillMandatoryFieldsAndRegister', function (fieldsVals = {}
     password = Cypress.env('user_password')
   } = fieldsVals
 
-  const register_button = '.woocomerce-FormRow .woocommerce-Button'
+  const register_button = 'input[value="Register"]'
+
   cy.visit('/')
   cy.get('#menu-icon').click()
   cy.contains('My Account').click()
