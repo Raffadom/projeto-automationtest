@@ -1,4 +1,6 @@
 describe('Register a User', () => {
+  const reg_email = '#reg_email'
+  const reg_password = '#reg_password'
   it('registra uma nova conta com sucesso', () => {
     cy.step('preenche os campos obrigatórios de registro e submete')
     cy.fillMandatoryFieldsAndRegister()
@@ -21,9 +23,9 @@ describe('Register a User', () => {
     })
     it('registra com um email já existente', () => {
       cy.step('preenche o campo "Email address" com e-mail já registrado')
-      cy.get('#reg_email').type(existing_email)
+      cy.get(reg_email).type(existing_email)
       cy.step('preenche o campo "Password" com senha válida')
-      cy.get('#reg_password').type(password, { log: false })
+      cy.get(reg_password).type(password, { log: false })
       cy.step('aguarda por 5 segundos')
       //cy.wait(1000)
       cy.step('clica no botão "Register"')
@@ -34,7 +36,7 @@ describe('Register a User', () => {
     })
     it('registra com o campo "Email-id" vazio', () => {
       cy.step('preenche com o campo "Email address" vazio e o campo "Password" com senha válida')
-      cy.get('#reg_password').type(password, { log: false })
+      cy.get(reg_password).type(password, { log: false })
       cy.step('aguarda por 5 segundos')
      // cy.wait(5000)
       cy.step('clica no botão "Register"')
@@ -45,7 +47,7 @@ describe('Register a User', () => {
     })
     it('registra com o campo "Password" vazio', () => {
       cy.step('preenche o campo "Email address" com e-mail válido e deixa o campo "Password" vazio')
-      cy.get('#reg_email').type(user, { log: false })
+      cy.get(reg_email).type(user, { log: false })
       cy.step('aguarda por 5 segundos')
       //cy.wait(5000)
       cy.step('clica no botão "Register"')
