@@ -6,68 +6,69 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json  
+      - name: Install dependencies
+        run: npm install
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
           command: npm run test:homePage
-      - name: Copy cypress.env.json
-        run: cp cypress/cypress.env.json cypress.env.json  
-        
+
   cypress-run-2:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json  
+      - name: Install dependencies
+        run: npm install
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
           command: npm run test:login
-      - name: Copy cypress.env.json
-        run: cp cypress/cypress.env.json cypress.env.json   
-        
+
   cypress-run-3:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json  
+      - name: Install dependencies
+        run: npm install
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
           command: npm run test:myaccount
-      - name: Copy cypress.env.json
-        run: cp cypress/cypress.env.json cypress.env.json   
-        
+
   cypress-run-4:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json  
+      - name: Install dependencies
+        run: npm install
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
           command: npm run test:register
-      - name: Copy cypress.env.json
-        run: cp cypress/cypress.env.json cypress.env.json   
-        
+
   cypress-run-5:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+      - name: Copy cypress.env.json
+        run: cp cypress/cypress.env.json cypress.env.json  
+      - name: Install dependencies
+        run: npm install
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with: 
           command: npm run test:shop
-      - name: Copy cypress.env.json
-        run: cp cypress/cypress.env.json cypress.env.json   
+
         
