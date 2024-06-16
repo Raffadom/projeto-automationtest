@@ -190,7 +190,7 @@ describe('Home Page', () => {
               cy.get('.order-total')
                 .and('contain', '357.00')
             })
-            it.only('home page - conclui uma compra com sucesso', () => {
+            it('home page - conclui uma compra com sucesso', () => {
               cy.step('clica no botao "PROCEED TO CHECKOUT"')
               cy.proceedToCheckout()
               cy.step('preenche os campos obrigatórios na página de checkout')
