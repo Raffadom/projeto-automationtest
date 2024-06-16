@@ -1,5 +1,6 @@
 describe('My Account', () => {
   const user = Cypress.env('user_name')
+  const message_com = '.woocommerce-message'
   beforeEach(() => {
     cy.section('Pré-condições dos testes')
     cy.step('realiza login')
@@ -111,7 +112,7 @@ describe('My Account', () => {
       .should('be.visible')
       .click()
     cy.step('verifica que a mensagem "Address changed successfully." está visivel')
-    cy.contains('.woocommerce-message', 'Address changed successfully.')
+    cy.contains(message_com, 'Address changed successfully.')
       .should('be.visible')
   })
   it('logado, o usuário pode visualizar os detalhes da conta onde também pode alterar sua senha', () => {
@@ -127,7 +128,7 @@ describe('My Account', () => {
       .should('be.visible')
       .click()
     cy.step('verifica que a mensagem "Account details changed successfully." esta visivel')
-    cy.get('.woocommerce-message')
+    cy.get(message_com)
       .should('be.visible')
   })
   it('logado, ao clicar em Logout, o usuário sai com sucesso do site', () => {
