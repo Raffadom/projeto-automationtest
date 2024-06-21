@@ -26,7 +26,7 @@ describe('Register a User', () => {
       cy.step('preenche o campo "Email address" com e-mail já registrado')
       cy.get(reg_email).type(existing_email)
       cy.step('preenche o campo "Password" com senha válida')
-      cy.get(reg_password).type(password, { log: false })
+      cy.get(reg_password).type(password)
       //cy.step('aguarda por 5 segundos')
       //cy.wait(1000)
       cy.step('clica no botão "Register"')
