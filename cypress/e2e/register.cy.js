@@ -32,9 +32,8 @@ describe('Register a User', () => {
       cy.step('clica no botão "Register"')
       cy.get(register_button).click( { force: true } )
       cy.step('verifica que a mensagem de erro esta correta e visível')
-      cy.get('.woocommerce-error > li', { timeout: 5000} )
+      cy.contains('Error: An account is already registered with your email address. Please login.')
         .should('be.visible')
-        .and('contain', 'Error: An account is already registered with your email address. Please login.')
     })
     it('registra com o campo "Email-id" vazio e senha válida', () => {
       cy.step('preenche com o campo "Email address" vazio e o campo "Password" com senha válida')
@@ -44,9 +43,8 @@ describe('Register a User', () => {
       cy.step('clica no botão "Register"')
       cy.get(register_button).click( { force: true } )
       cy.step('verifica que a mensagem de erro esta correta e visível')
-      cy.get('.woocommerce-error > li', { timeout: 5000} )
+      cy.contains('Error: Please provide a valid email address.')
         .should('be.visible')
-        .and('contain', 'Error: Please provide a valid email address.')
     })
     it('registra com o campo "Password" vazio', () => {
       cy.step('preenche o campo "Email address" com e-mail válido e deixa o campo "Password" vazio')
