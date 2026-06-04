@@ -55,4 +55,4 @@ ___
 
 Rafael Domingos Santos (Q.A Analist)
 https://github.com/Raffadom
-https://www.linkedin.com/in/rafael-domingos-aab12060/
+https://www.linkedin.com/in/rafael-domingos-qa
