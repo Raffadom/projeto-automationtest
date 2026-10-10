@@ -8,7 +8,15 @@ module.exports = defineConfig({
       hideCredentials: true,
       requestMode: true
     },
-    experimentalRunAllSpecs: true
+    experimentalRunAllSpecs: true,
+    experimentalMemoryManagement: true,
+    numTestsKeptInMemory: 1,
+    setupNodeEvents(on, config) {
+      // ...existing code...
+    },
+    browser: 'chrome',
+    chromeWebSecurity: false,
+    args: ['--disable-gpu', '--no-sandbox']
   },
   fixturesFolder: false,
   video: false

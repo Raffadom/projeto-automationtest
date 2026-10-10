@@ -1,4 +1,3 @@
-import { faker } from '@faker-js/faker'
 Cypress.Commands.add('gui_login', (
   user = Cypress.env('user_name'),
   password = Cypress.env('user_password')
@@ -13,9 +12,10 @@ Cypress.Commands.add('gui_login', (
 })
 
 Cypress.Commands.add('fillMandatoryFieldsAndRegister', function (fieldsVals = {}) {
+  const randomString = Math.random().toString(36).substring(2, 15)
   const raffa = {
-    name: `raffa@${faker.datatype.uuid()}.com.br`,
-    description: faker.random.words(1)
+    name: `test.${randomString}@example.com`,
+    description: 'test description'
   }
   const {
     password = Cypress.env('user_password')

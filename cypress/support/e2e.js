@@ -1,6 +1,5 @@
 
 import './commands'
-import 'cypress-plugin-steps'
 
 Cypress.Commands.add('sessionLogin', (
   user = Cypress.env('user_name'),
